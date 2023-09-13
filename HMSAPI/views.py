@@ -18,3 +18,9 @@ class drugItemsViews(generics.ListCreateAPIView):
     ordering_fields = ["price", "inStock"]
     filterset_fields  = ["price", "inStock"]
     search_fields  = ["name"]
+
+
+# creating single drug item views
+class singleDrugItemViews(generics.ListCreateAPIView):
+    queryset = drugItem.objects.all()
+    serializer_class = drugItemSerilizers

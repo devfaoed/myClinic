@@ -15,3 +15,8 @@ class drugItemSerilizers(serializers.ModelSerializer):
     class Meta:
         model = drugItem
         fields = ["id", "name", "price", "inStock", "category", "category_id"]
+        extra_kwargs = {
+            "price":{"min_value": 2},
+            "inStock":{"min_value": 1},
+        }
+        
